@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العيادة السنية الحديثة | الدكتورة رنا نصر الشركس</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        clinic: {
+                            dark: '#063729',     /* أخضر زمردي عميق للثقة */
+                            primary: '#059669',  /* أخضر طبي أساسي */
+                            accent: '#10b981',   /* أخضر حيوي للأزرار */
+                            light: '#ecfdf5',    /* أخضر فاتح جداً للخلفيات */
+                            surface: '#f8fafc',  /* أبيض مائل للرمادي الهادئ */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .faq-item.active .faq-content {
+            max-height: 200px;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+
+    <!-- Header & Pill Navigation -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand -->
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-clinic-primary text-white flex items-center justify-center text-lg shadow-sm">
+                    <i class="fa-solid fa-tooth"></i>
+                </div>
+                <div>
+                    <span class="font-extrabold text-lg text-clinic-dark block leading-none">العيادة السنية الحديثة</span>
+                    <span class="text-xs text-slate-500 font-medium">د. رنا نصر الشركس</span>
+                </div>
+            </a>
+
+            <!-- Center Pill Menu (Desktop) -->
+            <nav class="hidden md:flex items-center bg-clinic-dark text-white px-6 py-2.5 rounded-full gap-7 text-sm font-medium shadow-sm">
+                <a href="#home" class="text-emerald-300 font-semibold">الرئيسية</a>
+                <a href="#services" class="hover:text-emerald-300 transition">الخدمات السنية</a>
+                <a href="#doctor" class="hover:text-emerald-300 transition">عن الدكتورة</a>
+                <a href="#faq" class="hover:text-emerald-300 transition">الأسئلة الشائعة</a>
+                <a href="#location" class="hover:text-emerald-300 transition">الموقع والتواصل</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <a href="#booking" class="bg-clinic-accent hover:bg-clinic-primary text-white px-5 py-2.5 rounded-full text-sm font-bold transition shadow-sm flex items-center gap-2">
+                <span>حجز موعد</span>
+                <i class="fa-solid fa-arrow-left text-xs"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-12 pb-16 lg:pt-20 lg:pb-24 px-4 bg-white">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+            <!-- Right Column: Editorial Copy -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-clinic-light text-clinic-primary text-xs font-bold border border-emerald-200">
+                    <span class="w-2 h-2 rounded-full bg-clinic-primary"></span>
+                    <span>دمشق | العيادة السنية الحديثة بإشراف د. رنا نصر الشركس</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-[52px] font-extrabold text-slate-900 leading-[1.2]">
+                    ابتسامة صحية ومشرقة <br class="hidden sm:block">
+                    <span class="text-clinic-primary">بعناية سنية دقيقة.</span>
+                </h1>
+
+                <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl">
+                    في العيادة السنية الحديثة بإشراف الدكتورة رنا نصر الشركس، نقدم رعاية سنية شاملة تجمع بين العلاج التحفظي الدقيق، التجميل الطبيعي، والوقاية في أجواء هادئة ومعقمة بالكامل.
+                </p>
+
+                <div class="flex flex-wrap items-center gap-4 pt-2">
+                    <a href="#booking" class="bg-clinic-accent hover:bg-clinic-primary text-white px-7 py-3.5 rounded-full font-bold text-sm sm:text-base transition shadow-md shadow-emerald-600/15 flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>احجز موعدك عبر واتساب</span>
+                    </a>
+                    <a href="#services" class="px-7 py-3.5 rounded-full font-bold text-sm sm:text-base text-slate-700 border border-slate-200 hover:border-clinic-primary hover:text-clinic-primary transition">
+                        استعراض الخدمات
+                    </a>
+                </div>
+
+                <!-- Trust Badge Row -->
+                <div class="pt-4 flex items-center gap-6 text-sm text-slate-600 border-t border-slate-100">
+                    <div class="flex items-center gap-1.5 font-bold text-slate-900">
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <span>تقييم 5.0</span>
+                        <span class="text-slate-400 font-normal">على خرائط جوجل</span>
+                    </div>
+                    <span class="text-slate-300">|</span>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-shield-virus text-clinic-primary"></i>
+                        <span>تعقيم قياسي معتمد</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Left Column: Clean Clinic Visual Card -->
+            <div class="lg:col-span-5">
+                <div class="relative rounded-3xl overflow-hidden bg-clinic-light border border-emerald-100 p-3 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=80" 
+                         alt="العيادة السنية الحديثة الدكتورة رنا نصر الشركس في دمشق" 
+                         class="w-full h-[380px] object-cover rounded-2xl">
+                    
+                    <!-- Floating Status Card -->
+                    <div class="bg-white rounded-2xl p-4 shadow-md border border-slate-100 mt-3 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-full bg-clinic-light text-clinic-primary flex items-center justify-center text-lg">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-500">تأكيد المواعيد والاستفسارات</div>
+                                <div class="font-bold text-slate-900 text-sm" dir="ltr">+963 943 975 031</div>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-emerald-50 text-clinic-primary text-xs font-bold">حجز مسبق</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dark Green Stats Bar -->
+    <section class="px-4 -mt-4 mb-16">
+        <div class="max-w-7xl mx-auto bg-clinic-dark rounded-3xl p-8 sm:p-10 text-white shadow-xl">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-center">
+                <div class="bg-clinic-accent rounded-2xl p-6 text-white shadow-md">
+                    <div class="text-xs uppercase tracking-wider font-bold opacity-90 mb-1">عناية سنية متقنة</div>
+                    <div class="text-2xl font-extrabold mb-2">راحة وطمأنينة</div>
+                    <p class="text-xs leading-relaxed opacity-95">اهتمام دقيق بتفاصيل راحة المريض وتخفيف القلق من الجلسات العلاجية.</p>
+                </div>
+
+                <div class="px-4 border-r border-emerald-800/80">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-emerald-300">5.0 ★</div>
+                    <div class="font-bold text-sm mt-1">تقييم المراجعين</div>
+                    <p class="text-xs text-emerald-100/75 mt-1">ثقة عالية بفضل الدقة العلاجية وحسن الاستقبال والمتابعة.</p>
+                </div>
+
+                <div class="px-4 border-r border-emerald-800/80">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-emerald-300">100%</div>
+                    <div class="font-bold text-sm mt-1">معايير تعقيم</div>
+                    <p class="text-xs text-emerald-100/75 mt-1">التزام صارم ببروتوكولات التعقيم وسلامة الأدوات الطبية.</p>
+                </div>
+
+                <div class="px-4 border-r border-emerald-800/80">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-emerald-300">شامل</div>
+                    <div class="font-bold text-sm mt-1">علاج وتجميل</div>
+                    <p class="text-xs text-emerald-100/75 mt-1">خدمات متكاملة من الحشوات التجميلية إلى التبييض والتركيبات.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive Services Section -->
+    <section id="services" class="py-20 px-4 bg-clinic-surface">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-clinic-primary font-bold text-sm">خدماتنا السنية</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">حلول متكاملة لصحة وجمال أسنانك</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-3">نضع خطة علاجية مدروسة لكل حالة للحفاظ على الأسنان الطبيعية ومنح ابتسامة متوازنة.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-2xl p-7 border border-slate-200/80 hover:border-clinic-primary transition shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-clinic-light text-clinic-primary flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-tooth"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">الحشوات التجميلية والترميمية</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">ترميم الأسنان المتضررة أو المتسوسة بمواد تجميلية عالية الجودة تطابق لون الأسنان الطبيعي بدقة.</p>
+                    <a href="#booking" class="text-clinic-primary font-bold text-xs flex items-center gap-1.5 hover:underline">
+                        <span>احجز موعد ترميم</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-2xl p-7 border border-slate-200/80 hover:border-clinic-primary transition shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-clinic-light text-clinic-primary flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">تبييض وتلميع الأسنان</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">إزالة التصبغات السطحية وتلميع الأسنان بأسلوب آمن يمنحك إشراقة صحية وطبيعية للابتسامة.</p>
+                    <a href="#booking" class="text-clinic-primary font-bold text-xs flex items-center gap-1.5 hover:underline">
+                        <span>احجز جلسة تبييض</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-2xl p-7 border border-slate-200/80 hover:border-clinic-primary transition shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-clinic-light text-clinic-primary flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-microscope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">المعالجات اللبية وعلاج الجذور</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">علاج التهابات العصب والجذور بعناية فائقة لتخفيف الألم والحفاظ على السن الطبيعي لأطول فترة ممكنة.</p>
+                    <a href="#booking" class="text-clinic-primary font-bold text-xs flex items-center gap-1.5 hover:underline">
+                        <span>احجز موعد علاج</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-2xl p-7 border border-slate-200/80 hover:border-clinic-primary transition shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-clinic-light text-clinic-primary flex items-center justify-center text-xl mb-5">
+                        <i class="fa-regular fa-face-smile-beam"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">تجميل الابتسامة والتركيبات</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">تركيبات وتيجان سنية متقنة تعيد للأسنان شكلها ووظيفتها بتناسق مثالي مع ملامح الوجه.</p>
+                    <a href="#booking" class="text-clinic-primary font-bold text-xs flex items-center gap-1.5 hover:underline">
+                        <span>استفسر عن التجميل</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-2xl p-7 border border-slate-200/80 hover:border-clinic-primary transition shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-clinic-light text-clinic-primary flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">العناية باللثة والوقاية</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">تنظيف الجير وعلاج التهابات اللثة مع إرشادات وقائية يومية لحماية الأسنان واللثة من المشاكل المزمنة.</p>
+                    <a href="#booking" class="text-clinic-primary font-bold text-xs flex items-center gap-1.5 hover:underline">
+                        <span>احجز فحص لثة</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white rounded-2xl p-7 border border-slate-200/80 hover:border-clinic-primary transition shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-clinic-light text-clinic-primary flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-stethoscope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">الفحص الدوري والاستشارات</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">كشف مبكر على صحة الفم والأسنان وتقديم استشارات واضحة حول أفضل الخيارات العلاجية المناسبة لحالتك.</p>
+                    <a href="#booking" class="text-clinic-primary font-bold text-xs flex items-center gap-1.5 hover:underline">
+                        <span>احجز استشارة الآن</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctor & FAQ Section -->
+    <section id="doctor" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5">
+                <div class="bg-clinic-light rounded-3xl p-6 border border-emerald-100">
+                    <div class="bg-white rounded-2xl p-6 shadow-sm space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 rounded-2xl bg-clinic-dark text-white flex items-center justify-center text-2xl font-bold">
+                                د.ر
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-extrabold text-slate-900">الدكتورة رنا نصر الشركس</h3>
+                                <p class="text-clinic-primary text-sm font-semibold">العيادة السنية الحديثة — دمشق</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            نحرص في العيادة السنية الحديثة على الجمع بين الخبرة السريرية والأسلوب الإنساني الهادئ ليطمئن المريض في كل خطوة من خطوات العلاج.
+                        </p>
+                        <div class="grid grid-cols-2 gap-3 pt-2">
+                            <div class="p-3 rounded-xl bg-clinic-surface text-xs font-semibold text-slate-700 flex items-center gap-2">
+                                <i class="fa-solid fa-check-circle text-clinic-primary"></i>
+                                <span>خطة علاج واضحة</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-clinic-surface text-xs font-semibold text-slate-700 flex items-center gap-2">
+                                <i class="fa-solid fa-check-circle text-clinic-primary"></i>
+                                <span>متابعة مريحة للمرضى</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Accordion -->
+            <div id="faq" class="lg:col-span-7 space-y-4">
+                <span class="text-clinic-primary font-bold text-sm">إجابات واضحة</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-6">الأسئلة الشائعة للمراجعين</h2>
+
+                <div class="faq-item active border border-slate-200 rounded-2xl p-5 cursor-pointer bg-white" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center font-bold text-slate-900">
+                        <span>كيف يمكنني حجز موعد مسبق في العيادة؟</span>
+                        <i class="fa-solid fa-plus text-clinic-primary faq-icon transition-transform"></i>
+                    </div>
+                    <div class="faq-content text-slate-600 text-sm leading-relaxed">
+                        <p class="pt-3">يمكنك إرسال طلب حجز مباشرة عبر نموذج الموقع أو التواصل عبر واتساب العيادة على الرقم 0943975031 لتأكيد الموعد المناسب لك.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-2xl p-5 cursor-pointer bg-white" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center font-bold text-slate-900">
+                        <span>هل تتوفر علاجات تحفظية للحفاظ على السن الطبيعي؟</span>
+                        <i class="fa-solid fa-plus text-clinic-primary faq-icon transition-transform"></i>
+                    </div>
+                    <div class="faq-content text-slate-600 text-sm leading-relaxed">
+                        <p class="pt-3">نعم، نعطي الأولوية القصوى للحفاظ على السن الطبيعي ومعالجته بدقة قبل التفكير بأي تعويض أو إجراء إضافي.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item border border-slate-200 rounded-2xl p-5 cursor-pointer bg-white" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center font-bold text-slate-900">
+                        <span>هل يمكن الاستفسار عن حالة طبية قبل الحضور؟</span>
+                        <i class="fa-solid fa-plus text-clinic-primary faq-icon transition-transform"></i>
+                    </div>
+                    <div class="faq-content text-slate-600 text-sm leading-relaxed">
+                        <p class="pt-3">بالتأكيد، يمكنك إرسال استفسارك عبر واتساب العيادة وسنقوم بالرد وتنسيق موعد الكشف المناسب لحالتك.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking, Location & Interactive Google Map Section -->
+    <section id="booking" class="py-16 px-4 bg-clinic-surface">
+        <div class="max-w-7xl mx-auto bg-clinic-dark rounded-3xl overflow-hidden shadow-xl grid lg:grid-cols-12">
+            
+            <!-- Location, Hours & Interactive Map -->
+            <div id="location" class="lg:col-span-5 p-8 sm:p-10 text-white flex flex-col justify-between bg-gradient-to-br from-clinic-dark to-emerald-950">
+                <div class="space-y-5">
+                    <span class="inline-block px-3 py-1 rounded-full bg-emerald-800/70 text-emerald-200 text-xs font-bold">الموقع والتواصل</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold leading-snug">احجز موعدك مع الدكتورة رنا نصر الشركس</h2>
+
+                    <div class="space-y-3.5 text-sm">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-clinic-accent mt-1"></i>
+                            <div>
+                                <div class="font-bold">العنوان</div>
+                                <div class="text-emerald-100/80">دمشق، سوريا</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-user-doctor text-clinic-accent mt-1"></i>
+                            <div>
+                                <div class="font-bold">العيادة</div>
+                                <div class="text-emerald-100/80">العيادة السنية الحديثة — د. رنا نصر الشركس</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i class="fa-brands fa-whatsapp text-clinic-accent mt-1"></i>
+                            <div>
+                                <div class="font-bold">واتساب وهاتف العيادة</div>
+                                <div class="text-emerald-100/80" dir="ltr">+963 943 975 031</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Google Maps Embed (Damascus) -->
+                    <div class="pt-2">
+                        <div class="rounded-2xl overflow-hidden border border-emerald-700/60 shadow-lg bg-emerald-900/40">
+                            <iframe 
+                                title="موقع العيادة السنية الحديثة الدكتورة رنا نصر الشركس - دمشق"
+                                src="https://maps.google.com/maps?q=%D8%A7%D9%84%D8%B9%D9%8A%D8%A7%D8%AF%D8%A9%20%D8%A7%D9%84%D8%B3%D9%86%D9%8A%D8%A9%20%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AB%D8%A9%20%D8%AF%D9%83%D8%AA%D9%88%D8%B1%D8%A9%20%D8%B1%D9%86%D8%A7%20%D9%86%D8%B5%D8%B1%20%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%B3%20%D8%AF%D9%85%D8%B4%D9%82&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                                class="w-full h-48 border-0" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=العيادة+السنية+الحديثة+الدكتورة+رنا+نصر+الشركس+دمشق" target="_blank" rel="noopener noreferrer" class="mt-2.5 inline-flex items-center gap-1.5 text-xs font-bold text-emerald-300 hover:text-white transition">
+                            <i class="fa-solid fa-diamond-turn-right"></i>
+                            <span>فتح الموقع في تطبيق خرائط جوجل للملاحة</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pt-5 mt-5 border-t border-emerald-800/60 text-xs text-emerald-200/70">
+                    * يُنصح بالحجز المسبق عبر واتساب لتأكيد الموعد المناسب لحالتكم.
+                </div>
+            </div>
+
+            <!-- Clean White Booking Form -->
+            <div class="lg:col-span-7 p-8 sm:p-12 bg-white flex flex-col justify-center">
+                <h3 class="text-2xl font-extrabold text-slate-900 mb-2">نموذج حجز موعد</h3>
+                <p class="text-slate-500 text-sm mb-6">سيتم فتح محادثة واتساب جاهزة ببياناتك لإرسالها إلى العيادة بضغطة واحدة.</p>
+
+                <form id="clinicBookingForm" class="space-y-4">
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1.5">الاسم الكامل *</label>
+                            <input type="text" id="pName" required placeholder="أدخل اسمك الكريم" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-clinic-primary focus:ring-2 focus:ring-emerald-100 outline-none text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1.5">الخدمة المطلوبة</label>
+                            <select id="pService" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-clinic-primary focus:ring-2 focus:ring-emerald-100 outline-none text-sm bg-white">
+                                <option value="فحص واستشارة سنية">فحص واستشارة سنية</option>
+                                <option value="حشوات تجميلية وترميمية">حشوات تجميلية وترميمية</option>
+                                <option value="تبييض وتلميع الأسنان">تبييض وتلميع الأسنان</option>
+                                <option value="معالجة لبية / علاج جذور">معالجة لبية / علاج جذور</option>
+                                <option value="تركيبات وتجميل ابتسامة">تركيبات وتجميل ابتسامة</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1.5">اليوم والوقت المفضل</label>
+                        <input type="text" id="pTime" placeholder="مثال: يوم الثلاثاء فترة العصر" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-clinic-primary focus:ring-2 focus:ring-emerald-100 outline-none text-sm">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1.5">ملاحظات إضافية (اختياري)</label>
+                        <textarea id="pNotes" rows="3" placeholder="اذكر أي استفسار أو حالة خاصة..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-clinic-primary focus:ring-2 focus:ring-emerald-100 outline-none text-sm"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-clinic-accent hover:bg-clinic-primary text-white font-bold py-3.5 rounded-xl transition shadow-md flex items-center justify-center gap-2 text-sm sm:text-base">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>إرسال طلب الحجز عبر واتساب</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-100 py-8 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+            <div class="font-bold text-slate-700">العيادة السنية الحديثة — د. رنا نصر الشركس</div>
+            <div>دمشق، سوريا | جميع الحقوق محفوظة © 2026</div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(element) {
+            element.classList.toggle('active');
+        }
+
+        document.getElementById('clinicBookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('pName').value.trim();
+            const service = document.getElementById('pService').value;
+            const time = document.getElementById('pTime').value.trim() || 'أقرب موعد متاح';
+            const notes = document.getElementById('pNotes').value.trim();
+
+            let text = `مرحباً دكتورة رنا، أرغب بحجز موعد في العيادة السنية الحديثة:%0A`;
+            text += `• الاسم: ${name}%0A`;
+            text += `• الخدمة: ${service}%0A`;
+            text += `• الموعد المفضل: ${time}`;
+            if (notes) {
+                text += `%0A• ملاحظات: ${notes}`;
+            }
+
+            window.open(`https://wa.me/963943975031?text=${text}`, '_blank');
+        });
+    </script>
+</body>
+</html>
